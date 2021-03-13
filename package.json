@@ -1,0 +1,23 @@
+{
+  "name": "honeyscript",
+  "version": "1.0.0",
+  "description": "basic parser",
+  "main": "index.js",
+  "scripts": {
+    "make-parser":"npx nearleyc def.grammar -o def.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanmayhinge/honeyscript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanmayhinge/honeyscript/issues"
+  },
+  "homepage": "https://github.com/tanmayhinge/honeyscript#readme",
+  "dependencies": {
+    "nearley": "^2.20.1"
+  }
+}
