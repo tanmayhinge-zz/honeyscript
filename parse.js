@@ -6,7 +6,7 @@ const parser = new nearley.Parser(nearley.Grammar.fromCompiled(grammar));
 
 
 try{
-    parser.feed("a=123.3");
+    parser.feed("out a");
     console.log("Parse Succeeded",parser.results);
 }
 catch(e){

@@ -1,11 +1,11 @@
 program
     -> var_assignment {% id %}
-    | number {% id %}
+    | print_statement {% id %}
   
-var_assignment -> identifier "=" number 
+var_assignment -> identifier _ "=" _ number 
 {%
     data=>{
-        reuturn{
+        return{
             type: "var_assignment",
             varname: data[0],
             value: data[2]
@@ -14,6 +14,24 @@ var_assignment -> identifier "=" number
 %}
 
 identifier -> [a-z]:+ {% id %}
+
+
+unary_expression
+    -> number   {% id %}
+    | identifier {% id %}
+
+expression
+    -> unary_expression {% id %}
+    | binary_expression {% id %}
+
+binary_expression
+    -> unary_expression _ operator _ unary_expression
+
+operator
+    -> "+" {% id %}
+    | "-" {% id %}
+    | "*" {% id %}
+    | "/" {% id %}
 
 number 
     -> digits "." digits
@@ -28,4 +46,19 @@ number
 digits -> [0-9]:+ 
     {%
         data => data[0].join("")
+    %}
+
+_ -> [ ]:*
+__ -> [ ]:+
+
+print_statement -> "out" __ expression 
+    {%
+
+        data=>{
+            return{
+                type: "print_statement",
+                expression: data[2]
+            }
+        }
+
     %}

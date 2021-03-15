@@ -4,7 +4,7 @@
   "description": "basic parser",
   "main": "index.js",
   "scripts": {
-    "make-parser":"npx nearleyc def.grammar -o def.js"
+    "make-parser": "npx nearleyc def.grammar -o def.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/tanmayhinge/honeyscript#readme",
   "dependencies": {
+    "moo": "^0.5.1",
+    "mz": "^2.7.0",
     "nearley": "^2.20.1"
   }
 }
