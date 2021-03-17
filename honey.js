@@ -21,6 +21,7 @@ var grammar = {
                 },
     {"name": "statement", "symbols": ["var_assignment"], "postprocess": id},
     {"name": "statement", "symbols": ["fun_call"], "postprocess": id},
+    {"name": "statement", "symbols": [(lexer.has("comment") ? {type: "comment"} : comment)], "postprocess": id},
     {"name": "var_assignment", "symbols": [(lexer.has("identifier") ? {type: "identifier"} : identifier), "_", {"literal":"="}, "_", "expr"], "postprocess": 
         (data)=>{
             return{

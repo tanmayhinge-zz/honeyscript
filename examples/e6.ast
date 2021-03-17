@@ -1,0 +1,11 @@
+[
+ {
+  "type": "comment",
+  "value": "// comment ok?",
+  "text": "// comment ok?",
+  "offset": 0,
+  "lineBreaks": 0,
+  "line": 1,
+  "col": 1
+ }
+]

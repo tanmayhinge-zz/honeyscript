@@ -19,6 +19,7 @@ statements
 statement
     -> var_assignment {% id %}
     |   fun_call {% id %}
+    |   %comment {% id %}
 
 
 var_assignment
