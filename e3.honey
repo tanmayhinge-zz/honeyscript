@@ -1,0 +1,3 @@
+name = "Tanmay"
+out("Hey" name)
+a = add(0 add(3 4))
