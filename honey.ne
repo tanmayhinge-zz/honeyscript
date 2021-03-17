@@ -7,18 +7,14 @@
 @lexer lexer
 
 statements
-    -> _ statement _
-    {%
-      (data)=>{
-          return [data[1]];
-      }
-    %}
-    | statements %NL _ statement _
-    {%
-      (data)=>{
-          return [...data[0], data[3]];
-      }
-    %}
+    ->  _ml statement (__lb_ statement):* _ml
+        {%
+            (data) => {
+                const repeated = data[2];
+                const restStatements = repeated.map(chunks => chunks[1]);
+                return [data[1], ...restStatements];
+            }
+        %}
 
 statement
     -> var_assignment {% id %}
@@ -38,7 +34,7 @@ var_assignment
     %}
 
 fun_call
-    -> %identifier _ "(" _ (arg_list _):? ")"
+    -> %identifier _ "(" _ml (arg_list _ml):? ")"
     {%
         (data)=>{
             return{
@@ -57,7 +53,7 @@ arg_list
             return [data[0]];
         }
     %}
-    | arg_list __ expr
+    | arg_list __ml expr
     {%
         (data)=>{
             return [...data[0], data[2]];
@@ -72,42 +68,45 @@ expr
     | lambda {% id %}
 
 
-lambda -> "(" _ (param_list _):? ")" _ "=>" _ lambda_body
-{%
-    (data)=>{
-        return{
-            type: "lambda",
-            parameters: data[2]? data[2][0]:[],
-            body: data[7]
+lambda -> "(" _ (param_list _):? ")" _ "=>" _ml lambda_body
+    {%
+        (data) => {
+            return {
+                type: "lambda",
+                parameters: data[2] ? data[2][0] : [],
+                body: data[7]
+            }
         }
-    }
-%}
-
+    %}
+    
 param_list
     -> %identifier (__ %identifier):*
-    {%
-        (data)=>{
-            const repBlocks = data[1];
-            const restBlocks = repBlocks.map(piece => piece[1])
-            return [data[0], ...restBlocks];
-        }
-    %}
+        {%
+            (data) => {
+                const repeatedPieces = data[1];
+                const restParams = repeatedPieces.map(piece => piece[1]);
+                return [data[0], ...restParams];
+            }
+        %}
 
 lambda_body
-    -> expr 
-    {% 
-        (data)=>{   
-            return [data[0]];
-        }   
+    -> expr
+        {%
+            (data) => {
+                return [data[0]];
+            }
+        %}
+    |  "{" __lb_ statements __lb_ "}"
+        {%
+            (data) => {
+                return data[2];
+            }
+        %}
 
-    %}
-    | "{" _ %NL statements %NL _ "}"
-    {%
-        (data)=>{   
-            return [data[3]];
-        }          
+__lb_ -> (_ %NL):+ _
+_ml -> (%WS | %NL):*
+__ml -> (%WS | %NL):+
 
-    %}
 
 _ -> %WS:* 
 __ -> %WS:+ 
