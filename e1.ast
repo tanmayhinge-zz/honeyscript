@@ -12,8 +12,8 @@
  "arguments": [
   {
    "type": "string",
-   "value": "\"1,2\"",
-   "text": "\"1,2\"",
+   "value": "\"2,2\"",
+   "text": "\"2,2\"",
    "offset": 6,
    "lineBreaks": 0,
    "line": 1,
