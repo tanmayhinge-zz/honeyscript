@@ -21,3 +21,14 @@ function sqrt(x){
 function pow(x,y){
     return Math.pow(x,y);
 }
+function $if(cond,conq,alt){
+    if(cond){
+        return conq();
+    }
+    else{
+        return alt();
+    }
+}
+function eq(x,y){
+    return x===y;
+}
