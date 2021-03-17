@@ -7,16 +7,16 @@
 @lexer lexer
 
 statements
-    -> statement
+    -> _ statement _
     {%
       (data)=>{
-          return [data[0]];
+          return [data[1]];
       }
     %}
-    | statements %NL statement
+    | statements %NL _ statement _
     {%
       (data)=>{
-          return [...data[0], data[2]];
+          return [...data[0], data[3]];
       }
     %}
 
@@ -65,10 +65,49 @@ arg_list
     %}
 
 expr
-    ->  %string {% id %}
-    |   %number {% id %}
-    |   %identifier {% id %}
+    -> %string {% id %}
+    | %number {% id %}
+    | %identifier {% id %}
     | fun_call {% id %}
+    | lambda {% id %}
+
+
+lambda -> "(" _ (param_list _):? ")" _ "=>" _ lambda_body
+{%
+    (data)=>{
+        return{
+            type: "lambda",
+            parameters: data[2]? data[2][0]:[],
+            body: data[7]
+        }
+    }
+%}
+
+param_list
+    -> %identifier (__ %identifier):*
+    {%
+        (data)=>{
+            const repBlocks = data[1];
+            const restBlocks = repBlocks.map(piece => piece[1])
+            return [data[0], ...restBlocks];
+        }
+    %}
+
+lambda_body
+    -> expr 
+    {% 
+        (data)=>{   
+            return [data[0]];
+        }   
+
+    %}
+    | "{" _ %NL statements %NL _ "}"
+    {%
+        (data)=>{   
+            return [data[3]];
+        }          
+
+    %}
 
 _ -> %WS:* 
 __ -> %WS:+ 
