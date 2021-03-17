@@ -1,0 +1,281 @@
+[
+ {
+  "type": "var_assignment",
+  "var_name": {
+   "type": "identifier",
+   "value": "name",
+   "text": "name",
+   "offset": 0,
+   "lineBreaks": 0,
+   "line": 1,
+   "col": 1
+  },
+  "value": {
+   "type": "string",
+   "value": "\"Tanmay\"",
+   "text": "\"Tanmay\"",
+   "offset": 7,
+   "lineBreaks": 0,
+   "line": 1,
+   "col": 8
+  }
+ },
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 16,
+   "lineBreaks": 0,
+   "line": 2,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "string",
+    "value": "\"Hello\"",
+    "text": "\"Hello\"",
+    "offset": 20,
+    "lineBreaks": 0,
+    "line": 2,
+    "col": 5
+   },
+   {
+    "type": "identifier",
+    "value": "name",
+    "text": "name",
+    "offset": 28,
+    "lineBreaks": 0,
+    "line": 2,
+    "col": 13
+   }
+  ]
+ },
+ {
+  "type": "var_assignment",
+  "var_name": {
+   "type": "identifier",
+   "value": "pet",
+   "text": "pet",
+   "offset": 34,
+   "lineBreaks": 0,
+   "line": 3,
+   "col": 1
+  },
+  "value": {
+   "type": "string",
+   "value": "\"Cat\"",
+   "text": "\"Cat\"",
+   "offset": 40,
+   "lineBreaks": 0,
+   "line": 3,
+   "col": 7
+  }
+ },
+ {
+  "type": "var_assignment",
+  "var_name": {
+   "type": "identifier",
+   "value": "sum",
+   "text": "sum",
+   "offset": 46,
+   "lineBreaks": 0,
+   "line": 4,
+   "col": 1
+  },
+  "value": {
+   "type": "fun_call",
+   "fun_name": {
+    "type": "identifier",
+    "value": "add",
+    "text": "add",
+    "offset": 52,
+    "lineBreaks": 0,
+    "line": 4,
+    "col": 7
+   },
+   "arguments": [
+    {
+     "type": "number",
+     "value": "1",
+     "text": "1",
+     "offset": 56,
+     "lineBreaks": 0,
+     "line": 4,
+     "col": 11
+    },
+    {
+     "type": "fun_call",
+     "fun_name": {
+      "type": "identifier",
+      "value": "mul",
+      "text": "mul",
+      "offset": 58,
+      "lineBreaks": 0,
+      "line": 4,
+      "col": 13
+     },
+     "arguments": [
+      {
+       "type": "number",
+       "value": "2",
+       "text": "2",
+       "offset": 62,
+       "lineBreaks": 0,
+       "line": 4,
+       "col": 17
+      },
+      {
+       "type": "fun_call",
+       "fun_name": {
+        "type": "identifier",
+        "value": "sub",
+        "text": "sub",
+        "offset": 64,
+        "lineBreaks": 0,
+        "line": 4,
+        "col": 19
+       },
+       "arguments": [
+        {
+         "type": "number",
+         "value": "2",
+         "text": "2",
+         "offset": 68,
+         "lineBreaks": 0,
+         "line": 4,
+         "col": 23
+        },
+        {
+         "type": "fun_call",
+         "fun_name": {
+          "type": "identifier",
+          "value": "div",
+          "text": "div",
+          "offset": 70,
+          "lineBreaks": 0,
+          "line": 4,
+          "col": 25
+         },
+         "arguments": [
+          {
+           "type": "number",
+           "value": "1",
+           "text": "1",
+           "offset": 74,
+           "lineBreaks": 0,
+           "line": 4,
+           "col": 29
+          },
+          {
+           "type": "number",
+           "value": "1",
+           "text": "1",
+           "offset": 76,
+           "lineBreaks": 0,
+           "line": 4,
+           "col": 31
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 82,
+   "lineBreaks": 0,
+   "line": 5,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "fun_call",
+    "fun_name": {
+     "type": "identifier",
+     "value": "pow",
+     "text": "pow",
+     "offset": 86,
+     "lineBreaks": 0,
+     "line": 5,
+     "col": 5
+    },
+    "arguments": [
+     {
+      "type": "number",
+      "value": "2",
+      "text": "2",
+      "offset": 90,
+      "lineBreaks": 0,
+      "line": 5,
+      "col": 9
+     },
+     {
+      "type": "fun_call",
+      "fun_name": {
+       "type": "identifier",
+       "value": "sqrt",
+       "text": "sqrt",
+       "offset": 92,
+       "lineBreaks": 0,
+       "line": 5,
+       "col": 11
+      },
+      "arguments": [
+       {
+        "type": "number",
+        "value": "4",
+        "text": "4",
+        "offset": 97,
+        "lineBreaks": 0,
+        "line": 5,
+        "col": 16
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 102,
+   "lineBreaks": 0,
+   "line": 6,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "string",
+    "value": "\"Sum is \"",
+    "text": "\"Sum is \"",
+    "offset": 106,
+    "lineBreaks": 0,
+    "line": 6,
+    "col": 5
+   },
+   {
+    "type": "identifier",
+    "value": "sum",
+    "text": "sum",
+    "offset": 116,
+    "lineBreaks": 0,
+    "line": 6,
+    "col": 15
+   }
+  ]
+ }
+]

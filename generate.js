@@ -8,8 +8,9 @@ async function main(){
     }
 
     const astJSON = (await fs.readFile(filename)).toString();
+    const runitmeJS = (await fs.readFile("library.js")).toString();
     const statements = JSON.parse(astJSON);
-    const jsCode = genJSforSt(statements);
+    const jsCode = genJSforSt(statements) + "\n" + runitmeJS;
     const outputFilename= filename.replace(".ast",".js");
 
     await fs.writeFile(outputFilename, jsCode);
@@ -49,11 +50,14 @@ function genJSforStOrExpr(node){
     else if(node.type === "number"){
         return node.value;
     }
+    else if(node.type === "identifier"){
+        return node.value;
+    }
 
     else{
         throw new Error(`Unhandeld AST node type ${node.type}`);
     }
-    
+
 }
 
 main().catch(err => console.log(err.stack));
