@@ -4,7 +4,7 @@
   "description": "basic parser",
   "main": "index.js",
   "scripts": {
-    "make-parser": "npx nearleyc def.grammar -o def.js"
+    "make-parser": "npx nearleyc honey.ne -o honey.js"
   },
   "repository": {
     "type": "git",
