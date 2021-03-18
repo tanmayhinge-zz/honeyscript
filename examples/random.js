@@ -1,3 +1,9 @@
+out(random(10))
+
+out(random(11))
+
+out(random(100))
+
 function out(...args){
     console.log(...args)
 }

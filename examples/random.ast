@@ -1,0 +1,140 @@
+[
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 0,
+   "lineBreaks": 0,
+   "line": 1,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "fun_call",
+    "fun_name": {
+     "type": "identifier",
+     "value": "random",
+     "text": "random",
+     "offset": 4,
+     "lineBreaks": 0,
+     "line": 1,
+     "col": 5
+    },
+    "arguments": [
+     {
+      "type": "number",
+      "value": "10",
+      "text": "10",
+      "offset": 11,
+      "lineBreaks": 0,
+      "line": 1,
+      "col": 12
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "comment",
+  "value": "// x can be 10 -> numbers from 0 to 9",
+  "text": "// x can be 10 -> numbers from 0 to 9",
+  "offset": 16,
+  "lineBreaks": 0,
+  "line": 2,
+  "col": 1
+ },
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 55,
+   "lineBreaks": 0,
+   "line": 4,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "fun_call",
+    "fun_name": {
+     "type": "identifier",
+     "value": "random",
+     "text": "random",
+     "offset": 59,
+     "lineBreaks": 0,
+     "line": 4,
+     "col": 5
+    },
+    "arguments": [
+     {
+      "type": "number",
+      "value": "11",
+      "text": "11",
+      "offset": 66,
+      "lineBreaks": 0,
+      "line": 4,
+      "col": 12
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "comment",
+  "value": "// numbers from 0 to 10",
+  "text": "// numbers from 0 to 10",
+  "offset": 71,
+  "lineBreaks": 0,
+  "line": 5,
+  "col": 1
+ },
+ {
+  "type": "fun_call",
+  "fun_name": {
+   "type": "identifier",
+   "value": "out",
+   "text": "out",
+   "offset": 96,
+   "lineBreaks": 0,
+   "line": 7,
+   "col": 1
+  },
+  "arguments": [
+   {
+    "type": "fun_call",
+    "fun_name": {
+     "type": "identifier",
+     "value": "random",
+     "text": "random",
+     "offset": 100,
+     "lineBreaks": 0,
+     "line": 7,
+     "col": 5
+    },
+    "arguments": [
+     {
+      "type": "number",
+      "value": "100",
+      "text": "100",
+      "offset": 107,
+      "lineBreaks": 0,
+      "line": 7,
+      "col": 12
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "type": "comment",
+  "value": "// numbers from 0 to 99",
+  "text": "// numbers from 0 to 99",
+  "offset": 113,
+  "lineBreaks": 0,
+  "line": 8,
+  "col": 1
+ }
+]
