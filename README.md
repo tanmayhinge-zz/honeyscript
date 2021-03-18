@@ -14,12 +14,15 @@ this is the structure of execution:
 1. If you have git installed,  ` git clone https://github.com/tanmayhinge/honeyscript.git` This will download all files necessary for you to start writing honeyscript. 
 2. Create a new file called `hello.honey` in ./honeyscript/ folder
 3. Copy paste the below code and run command `npm run honey hello.honey`
+
 ```js
 out("Hello World!")
 ```
+
 Below are some more honeyscript code-examples that cover all the features of honeyscript.
 
 math.honey
+
 ```js
 // comments can also be written like this
 a = 5
@@ -29,7 +32,9 @@ out(sub(3 5))
 out(mul(3 5))
 out(div(3 5))
 ```
+
 if.honey
+
 ```js
 a = 3
 b = 3
@@ -42,6 +47,7 @@ if(eq(a b)
 ```
 
 lambda.honey
+
 ```js
 solve = (n) =>
     if(eq(n 3)  
