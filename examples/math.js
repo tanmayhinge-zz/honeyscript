@@ -1,4 +1,9 @@
-out("Hello World!")
+var a = 5;
+var b = 3;
+out(add(3, 5))
+out(sub(3, 5))
+out(mul(3, 5))
+out(div(3, 5))
 function out(...args){
     console.log(...args)
 }

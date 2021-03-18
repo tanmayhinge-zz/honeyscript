@@ -1,0 +1,19 @@
+solve = (n) =>
+    if(eq(n 3)  
+        () => 0 
+        () =>   
+            sub(n 3) 
+        )
+        
+       
+result = solve(10) 
+
+out("The answer is" result)
+
+
+// call solve() function and pass n=10 
+// compares if n equals 3
+    // if yes, return 0
+    // else
+        // return n-3
+//print result

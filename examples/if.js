@@ -1,3 +1,10 @@
+var a = 3;
+var b = 4;
+$if(eq(a, b), function () {
+    return out("a equals b")
+}, function () {
+    return out("a not equal to b")
+})
 function out(...args){
     console.log(...args)
 }

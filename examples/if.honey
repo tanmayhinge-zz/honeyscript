@@ -1,0 +1,8 @@
+a = 3
+b = 3
+if(eq(a b)
+    ()=>
+        out("a equals b")
+    ()=>
+        out("a not equal to b")
+)

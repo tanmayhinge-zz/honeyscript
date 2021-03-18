@@ -1,0 +1,6 @@
+a = 5
+b = 3
+out(add(3 5))       // com
+out(sub(3 5))
+out(mul(3 5))
+out(div(3 5))
