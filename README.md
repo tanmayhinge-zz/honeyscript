@@ -1,4 +1,4 @@
-# honeyscript.
+![img](./assets/banner.png)
 
 honeyscript is a javascript based minimal programming language. It has features such as artihmetic functions, output, lambda functions etc.
 
