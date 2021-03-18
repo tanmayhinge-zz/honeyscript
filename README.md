@@ -11,7 +11,7 @@ this is the structure of execution:
 ---
 
 ### Steps to get started:
-1. If you have git installed,```git clone https://github.com/tanmayhinge/honeyscript.git``` This will download all files necessary for you to start writing honeyscript. 
+1. If you have git installed, ```git clone https://github.com/tanmayhinge/honeyscript.git``` .. This will download all files necessary for you to start writing honeyscript. 
 2. Create a new file called ```hello.honey``` in the root of  ```./honeyscript/``` folder
 3. Copy paste the below code examples or write your own and run command ```npm run honey hello.honey```
 
