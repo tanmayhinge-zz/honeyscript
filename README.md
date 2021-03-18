@@ -1,6 +1,6 @@
 <center> 
 
-![img](./assets/banner.png) 
+<img src="./assets/banner.png" width=700/>
 
 </center>
 
