@@ -4,14 +4,9 @@ honeyscript is a javascript based minimal programming language. It has features 
 
 ---
 
-```mermaid
-graph LR
-A[npm run honey filename] -- .honey file --> B((parse.js))
-B -- .ast fille --> C((generate.js))
-C -- .js fille --> D((node))
-D --> E[Execution]
+this is the structure of execution:
 
-```
+.honey file -> parse.js -> .ast file -> generate.js -> .js file -> node -> result
 
 ---
 
