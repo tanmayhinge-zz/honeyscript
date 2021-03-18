@@ -1,9 +1,4 @@
-var name = "Tanmay";
-out("Hello", name)
-var pet = "Cat";
-var sum = add(1, mul(2, sub(2, div(1, 1))));
-out(pow(2, sqrt(4)))
-out("Sum is ", sum)
+out("Hello World!")
 function out(...args){
     console.log(...args)
 }
@@ -26,4 +21,15 @@ function sqrt(x){
 }
 function pow(x,y){
     return Math.pow(x,y);
+}
+function $if(cond,conq,alt){
+    if(cond){
+        return conq();
+    }
+    else{
+        return alt();
+    }
+}
+function eq(x,y){
+    return x===y;
 }

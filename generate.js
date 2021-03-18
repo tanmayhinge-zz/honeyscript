@@ -3,17 +3,18 @@ const fs = require("mz/fs");
 async function main() {
     const filename = process.argv[2];
     if (!filename) {
-        console.log("Please provide a .ast file.");
+        console.log("error reading ast or ast not provided");
         return;
     }
     
     const astJson = (await fs.readFile(filename)).toString();
     const runtimeJs = (await fs.readFile("library.js")).toString();
     const statements = JSON.parse(astJson);
+
     const jsCode = generateJsForStatements(statements) + "\n" + runtimeJs;
     const outputFilename = filename.replace(".ast", ".js");
     await fs.writeFile(outputFilename, jsCode);
-    console.log(`Wrote ${outputFilename}.`);
+    // console.log(`Wrote ${outputFilename}.`);
 }
 
 function generateJsForStatements(statements) {
@@ -25,13 +26,17 @@ function generateJsForStatements(statements) {
     return lines.join("\n");
 }
 
+// author: Tanmay Hinge
+
 function generateJsForStatementOrExpr(node) {
+
     if (node.type === "var_assignment") {
         const varName = node.var_name.value;
         const jsExpr = generateJsForStatementOrExpr(node.value);
         const js = `var ${varName} = ${jsExpr};`;
         return js;
-    } else if (node.type === "fun_call") {
+    } 
+    else if (node.type === "fun_call") {
         let funName = node.fun_name.value;
         if (funName === "if") {
             funName = "$if";
@@ -40,13 +45,17 @@ function generateJsForStatementOrExpr(node) {
             return generateJsForStatementOrExpr(arg);
         }).join(", ");
         return `${funName}(${argList})`;
-    } else if (node.type === "string") {
+    } 
+    else if (node.type === "string") {
         return node.value;
-    } else if (node.type === "number") {
+    } 
+    else if (node.type === "number") {
         return node.value;
-    } else if (node.type === "identifier") {
+    } 
+    else if (node.type === "identifier") {
         return node.value;
-    } else if (node.type === "lambda") {
+    } 
+    else if (node.type === "lambda") {
         const paramList = node.parameters
             .map(param => param.value)
             .join(", ");
@@ -59,9 +68,11 @@ function generateJsForStatementOrExpr(node) {
             }
         }).join(";\n");
         return `function (${paramList}) {\n${indent(jsBody)}\n}`;
-    } else if (node.type === "comment") {
+    } 
+    else if (node.type === "comment") {
         return "";
-    } else {
+    } 
+    else {
         throw new Error(`Unhandled AST node type ${node.type}`);
     }
 }

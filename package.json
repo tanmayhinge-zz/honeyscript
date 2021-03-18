@@ -1,10 +1,11 @@
 {
   "name": "honeyscript",
   "version": "1.0.0",
-  "description": "basic parser",
+  "description": "a basic programming language :)",
   "main": "index.js",
   "scripts": {
-    "make-parser": "npx nearleyc honey.ne -o honey.js"
+    "make-parser": "npx nearleyc honey.ne -o honey.js",
+    "honey": "node run.js"
   },
   "repository": {
     "type": "git",

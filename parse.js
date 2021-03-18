@@ -1,3 +1,4 @@
+// author: Tanmay Hinge
 const nearley = require("nearley");
 const grammar = require("./honey.js");
 const fs = require("mz/fs");
@@ -30,10 +31,10 @@ async function main(){
         const ast = parser.results[0];
         const outputFilename = filename.replace(".honey", ".ast");
         await fs.writeFile(outputFilename, JSON.stringify(ast, null, " "));
-        console.log(`Success ${outputFilename}..`);
+        // console.log(`Success ${outputFilename}..`);
     }
     else{
-        console.log("Error, no parse found");
+        console.log("Error while parsing the file");
     }
 
 // try{
@@ -47,3 +48,6 @@ async function main(){
 }
 
 main().catch(err => console.log(err.stack));
+
+
+// author: Tanmay Hinge

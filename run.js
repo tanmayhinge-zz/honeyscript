@@ -18,7 +18,7 @@ async function main(){
 
 
 }
-
+// author: Tanmay Hinge
 
 async function exeC(command){
     const output = await exec(command);

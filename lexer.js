@@ -16,6 +16,8 @@ let lexer = moo.compile({
   NL:      { match: /\n/, lineBreaks: true },
 });
 
+// author: Tanmay Hinge
+
 module.exports = lexer;
 
 async function main() {

@@ -9,14 +9,19 @@ function id(x) { return x[0]; }
 var grammar = {
     Lexer: lexer,
     ParserRules: [
+    {"name": "prog", "symbols": ["_ml", "statements", "_ml"], "postprocess": 
+        (data)=>{
+            return data[1];
+        }
+            },
     {"name": "statements$ebnf$1", "symbols": []},
     {"name": "statements$ebnf$1$subexpression$1", "symbols": ["__lb_", "statement"]},
     {"name": "statements$ebnf$1", "symbols": ["statements$ebnf$1", "statements$ebnf$1$subexpression$1"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "statements", "symbols": ["_ml", "statement", "statements$ebnf$1", "_ml"], "postprocess": 
+    {"name": "statements", "symbols": ["statement", "statements$ebnf$1"], "postprocess": 
         (data) => {
-            const repeated = data[2];
+            const repeated = data[1];
             const restStatements = repeated.map(chunks => chunks[1]);
-            return [data[1], ...restStatements];
+            return [data[0], ...restStatements];
         }
                 },
     {"name": "statement", "symbols": ["var_assignment"], "postprocess": id},
@@ -114,7 +119,7 @@ var grammar = {
     {"name": "__$ebnf$1", "symbols": ["__$ebnf$1", (lexer.has("WS") ? {type: "WS"} : WS)], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "__", "symbols": ["__$ebnf$1"]}
 ]
-  , ParserStart: "statements"
+  , ParserStart: "prog"
 }
 if (typeof module !== 'undefined'&& typeof module.exports !== 'undefined') {
    module.exports = grammar;

@@ -6,13 +6,21 @@
 
 @lexer lexer
 
+prog
+    -> _ml statements _ml
+    {%
+        (data)=>{
+            return data[1];
+        }
+    %}
+
 statements
-    ->  _ml statement (__lb_ statement):* _ml
+    ->  statement (__lb_ statement):*
         {%
             (data) => {
-                const repeated = data[2];
+                const repeated = data[1];
                 const restStatements = repeated.map(chunks => chunks[1]);
-                return [data[1], ...restStatements];
+                return [data[0], ...restStatements];
             }
         %}
 
